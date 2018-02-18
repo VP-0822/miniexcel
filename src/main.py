@@ -28,7 +28,7 @@ workbook = workbook.Workbook('testbook', [worksheet1, worksheet2])
 
 samplejsondata = workbook.toJSON()
 
-#print(samplejsondata)
+print(samplejsondata)
 
 data = JSONDeserializer.deserialize_workbook(samplejsondata)
 print(data.worksheets[0].cells[0].row_number)
