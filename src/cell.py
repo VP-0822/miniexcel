@@ -3,32 +3,9 @@ import json
 class Cell:
     'Base class for cell in worksheet.'
 
-    def __init__(self, cell_ref, cell_content=None):
-        self.row_number = self.__get_row_number(cell_ref)
-        self.column_number = self.__get_column_number(cell_ref)
+    def __init__(self, column_number, cell_content=None):
+        self.column_number = column_number
         self.cell_content = cell_content
-
-    #def __init__(self, row_number, column_number, cell_content):
-    #    self.row_number = row_number
-    #    self.column_number = column_number
-    #    self.cell_content = cell_content
-
-    def __get_row_number(self, cell_ref):
-        row_number = ''
-        for character in cell_ref:
-            if self.__is_digit(character):
-                row_number += character
-
-        return row_number
-
-    def __get_column_number(self, cell_ref):
-        col_number = ''
-
-        for character in cell_ref:
-            if self.__is_alphabet(character):
-                col_number += character
-
-        return col_number
 
     def __is_alphabet(self, character):
         return str(character).isalpha()
